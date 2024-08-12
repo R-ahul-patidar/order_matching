@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Order Summary Page</title>
+  </head>
+  <body>
+    <h1>Order Summary Page</h1>
+
+    <!-- Completed Orders Table -->
+    <h2>Completed Orders</h2>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Timestamp</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for order in completed_orders %}
+        <tr>
+          <td>{{ order.price }}</td>
+          <td>{{ order.quantity }}</td>
+          <td>{{ order.timestamp }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <a href="{% url 'order_and_match_page' %}">Back to Order and Match Page</a>
+  </body>
+</html>
